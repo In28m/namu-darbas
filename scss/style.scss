@@ -1,0 +1,91 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: rgba(163, 163, 163, 0.356);
+
+}
+section {
+  width: 65%;
+  margin: 6.5rem auto 0;
+}
+.tabs{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3rem;
+}
+.tabs h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  position: relative;
+}
+.tabs h1::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -3%;
+  width: 0%;
+  height: 5px;
+  background-image: linear-gradient(to left, #d34bcc, #b24fc9, #4310b5);
+  border-radius: 30px;
+  transition: width 0.8s ease;
+}
+.tabs h1.active::after {
+  width: 104%;
+}
+
+.container {
+  position: relative;
+
+}
+
+.content {
+  position: absolute;
+  padding-top: 70px;
+  left: 0;
+  display: none;
+  background-image: linear-gradient(to left,  #ffdde1, #d34bcc, #ee9ca7);
+}
+
+.content.active {
+  display: block;
+  animation: fade 1s ease;
+}
+
+.content img {
+  
+  width: 50%;
+  height: 20rem;
+  margin-left: 250px;
+}
+
+.content p {
+  font-size: 1.5rem;
+  text-align: center;
+  width: 70%;
+  margin: 1rem auto 0rem;
+  color: #4310b5;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 70%;
+  }
+  section{
+    width: 100%;
+  }
+  
+}
